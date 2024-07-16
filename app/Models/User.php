@@ -36,4 +36,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Book::class, 'user_id'); // Define the relationship with the correct foreign key
     }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

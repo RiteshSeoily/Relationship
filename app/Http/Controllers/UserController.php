@@ -12,4 +12,13 @@ class UserController extends Controller
         $user = User::with('book')->findOrFail($id); // Eager load the 'book' relationship
         return response()->json($user);
     }
+    public function showRelationships()
+    {
+        // Fetch a user with posts and their associated tags
+        $user = User::with('posts.tags')->first();
+
+        return response()->json([
+            'user' => $user,
+        ]);
+    }
 }

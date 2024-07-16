@@ -6,7 +6,7 @@ use App\Http\Controllers\BookController;
 
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
-
+Route::get('/show-relationships', [UserController::class, 'showRelationships']);
 
 Route::get('/', function () {
     return view('welcome');
